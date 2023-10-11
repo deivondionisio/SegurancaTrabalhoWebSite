@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requisições</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Inclua a biblioteca Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <header>
+    <div class="letras-topo">
+        <h1>REQNUM: 000000</h1>
+        <h3>C.CUSTO:000000</h3>
+        <p>## Nome ##</p>
+        <p>Mat.: 0000000</p>
+    </div>
+  </header>
+  <main>
+    <section id="formulario">
+      <h2 class="title_tab">Formulário</h2>
+      <table id="tabela-formulario">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantidade</th>
+            <th>Tamanho</th>
+            <th>Devolução</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" name="item[]" placeholder="Item"></td>
+            <td>
+              <select name="quantidade[]">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </td>
+            <td>
+              <select name="tamanho[]">
+                <option value="PP">PP</option>
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+                <option value="GG">GG</option>
+                <option value="XG">XG</option>
+                <option value="XGG">XGG</option>
+              </select>
+            </td>
+            <td>
+              <select name="devolucao[]">
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+              </select>
+            </td>
+            <td><button class="btn btn-danger" onclick="removerLinha(this)">Remover</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Use a classe "btn btn-success" para o botão "Adicionar" -->
+      <button class="btn btn-success" onclick="adicionarLinha()">Adicionar</button>
+    </section>
+    <section id="mensagens">
+      <h2>Mensagens</h2>
+      <textarea name="mensagens" placeholder="Mensagens adicionais"></textarea>
+    </section>
+    <!-- Use a classe "btn btn-success float-right" para o botão "Enviar solicitação" -->
+    <input type="submit" class="btn btn-success float-right" value="Enviar solicitação">
+  </main>
+  <footer>
+    <!-- Conteúdo do rodapé aqui, se necessário -->
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
