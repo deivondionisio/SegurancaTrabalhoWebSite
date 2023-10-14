@@ -258,3 +258,30 @@ h1 {
 
 /* Estilo da imagem de fundo específica para burcar requisitante.html */
 
+/* CSS para o efeito "glass morphism" ocupando 50% da largura à direita */
+body {
+    background-image: url('img/colheita.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.glass-morphism-container {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border: none; /* Remova a borda */
+    width: 50%; /* Ocupa 50% da largura da janela à direita */
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
