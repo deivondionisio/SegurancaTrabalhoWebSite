@@ -152,7 +152,7 @@ footer {
 /* Estilo da imagem de fundo específica para index.html */
 
 .page2-background {
-    background-image: url('app/img/feche-a-mao-segurando-fones-de-ouvido-de-protecao.jpg');
+    background-image: url('../SegurancaTrabalhoWebSite/img/feche-a-mao-segurando-fones-de-ouvido-de-protecao.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     /* Outros estilos de fundo, se necessário */
