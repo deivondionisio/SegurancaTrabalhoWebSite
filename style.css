@@ -37,7 +37,6 @@ header {
 }
 
 /* Estilize a tabela para ser responsiva */
-/* Estilize a tabela para ser responsiva */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -153,7 +152,7 @@ footer {
 /* Estilo da imagem de fundo específica para index.html */
 
 .page2-background {
-    background-image: url('img/trabalhador-manual-masculino-novo-com-fones-de-ouvido-de-seguranca.jpg');
+    background-image: url('app/img/feche-a-mao-segurando-fones-de-ouvido-de-protecao.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     /* Outros estilos de fundo, se necessário */
