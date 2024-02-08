@@ -1,14 +1,15 @@
-# Use a imagem oficial do Node.js como base
-FROM node:14
+ARG IMAGE_VERSION_BUILD=latest
+ARG IMAGE_VERSION=latest
+ARG NODE_ENV=development
 
-# Defina o diretório de trabalho dentro do contêiner
-WORKDIR /app
+FROM node:${IMAGE_VERSION_BUILD} AS build
+RUN apt-get update && apt-get install -y --no-install-recommends dumb-init
 
-# Copie os arquivos do projeto para o contêiner
-COPY . .
-
-# Instale as dependências do Node.js
-RUN npm install
-
-# Inicie o servidor web Node.js
-CMD ["npm", "start"]
+FROM node:${IMAGE_VERSION}
+ENV NODE_ENV ${NODE_ENV}
+COPY --from=build /usr/bin/dumb-init /usr/bin/dumb-init
+RUN mkdir /usr/src/app
+RUN chown node:node /usr/src/app
+WORKDIR /usr/src/app
+USER node
+CMD ["dumb-init", "npm", "run", "start"]
