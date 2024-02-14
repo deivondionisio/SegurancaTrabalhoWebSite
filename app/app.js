@@ -7,6 +7,9 @@ var corsOptions = {
     origin: "http://localhost:3001"
   };
   
+  // Configurar rota para servir arquivos estáticos
+  app.use('/assets', express.static(__dirname + '/views/platform/assets'));
+
   app.use(cors(corsOptions));
   
   // parse requests of content-type - application/json
@@ -16,8 +19,8 @@ var corsOptions = {
   app.use(express.urlencoded({ extended: true }));
   
   // simple route
-  app.get("/", (req, res) => {
-    res.json({ message: "Bem-vindo ao Ambiente de Testes." });
+  app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/views/platform/index.html");
   });
 
 app.listen(port, () => {
